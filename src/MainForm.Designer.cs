@@ -48,16 +48,16 @@
             // 
             this.richTextBoxScript.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxScript.Location = new System.Drawing.Point(58, 147);
+            this.richTextBoxScript.Location = new System.Drawing.Point(13, 144);
             this.richTextBoxScript.Name = "richTextBoxScript";
             this.richTextBoxScript.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.richTextBoxScript.Size = new System.Drawing.Size(342, 173);
+            this.richTextBoxScript.Size = new System.Drawing.Size(427, 173);
             this.richTextBoxScript.TabIndex = 0;
             this.richTextBoxScript.Text = "Insert your script here";
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(58, 338);
+            this.btnLoad.Location = new System.Drawing.Point(13, 115);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(148, 338);
+            this.btnSave.Location = new System.Drawing.Point(94, 115);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             // btnExecute
             // 
-            this.btnExecute.Location = new System.Drawing.Point(236, 338);
+            this.btnExecute.Location = new System.Drawing.Point(284, 323);
             this.btnExecute.Name = "btnExecute";
             this.btnExecute.Size = new System.Drawing.Size(75, 23);
             this.btnExecute.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             // btnInject
             // 
-            this.btnInject.Location = new System.Drawing.Point(325, 338);
+            this.btnInject.Location = new System.Drawing.Point(365, 323);
             this.btnInject.Name = "btnInject";
             this.btnInject.Size = new System.Drawing.Size(75, 23);
             this.btnInject.TabIndex = 4;
@@ -98,23 +98,24 @@
             // labelLogo
             // 
             this.labelLogo.AutoSize = true;
-            this.labelLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogo.Font = new System.Drawing.Font("Arial Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelLogo.Location = new System.Drawing.Point(149, 59);
+            this.labelLogo.Location = new System.Drawing.Point(2, 6);
             this.labelLogo.Name = "labelLogo";
-            this.labelLogo.Size = new System.Drawing.Size(164, 37);
+            this.labelLogo.Size = new System.Drawing.Size(167, 41);
             this.labelLogo.TabIndex = 5;
             this.labelLogo.Text = "SkidWare";
+            this.labelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnSkidWareFormMouseDown);
             // 
             // labelClose
             // 
             this.labelClose.AutoSize = true;
             this.labelClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelClose.Location = new System.Drawing.Point(439, 6);
+            this.labelClose.Location = new System.Drawing.Point(423, 9);
             this.labelClose.Name = "labelClose";
-            this.labelClose.Size = new System.Drawing.Size(24, 25);
+            this.labelClose.Size = new System.Drawing.Size(23, 25);
             this.labelClose.TabIndex = 6;
             this.labelClose.Text = "x";
             this.labelClose.Click += new System.EventHandler(this.OnButtonCloseClicked);
@@ -125,7 +126,7 @@
             this.labelMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMinimize.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelMinimize.Location = new System.Drawing.Point(405, 6);
+            this.labelMinimize.Location = new System.Drawing.Point(392, 9);
             this.labelMinimize.Name = "labelMinimize";
             this.labelMinimize.Size = new System.Drawing.Size(25, 25);
             this.labelMinimize.TabIndex = 7;
@@ -135,20 +136,21 @@
             // labelStatus
             // 
             this.labelStatus.AutoSize = true;
-            this.labelStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatus.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelStatus.Location = new System.Drawing.Point(55, 128);
+            this.labelStatus.Location = new System.Drawing.Point(9, 47);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(107, 16);
+            this.labelStatus.Size = new System.Drawing.Size(130, 21);
             this.labelStatus.TabIndex = 8;
             this.labelStatus.Text = "Status: Initializing";
+            this.labelStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnSkidWareFormMouseDown);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.linkLabel1.Location = new System.Drawing.Point(8, 407);
+            this.linkLabel1.Location = new System.Drawing.Point(12, 333);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(96, 13);
             this.linkLabel1.TabIndex = 9;
@@ -160,8 +162,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(468, 431);
+            this.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.ClientSize = new System.Drawing.Size(455, 364);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.labelMinimize);
@@ -176,7 +178,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SkidWareForm";
             this.Load += new System.EventHandler(this.OnSkidWareFormLoad);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnFormMouseDown);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnSkidWareFormMouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

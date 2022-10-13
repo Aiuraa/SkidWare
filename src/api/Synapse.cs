@@ -6,12 +6,10 @@ using sxlib.Specialized;
 
 namespace SkidWare.api
 {
-    class Synapse
+    public class Synapse
     {
-        // Internal variable, no need to expose
-        private SxLibWinForms instance;
-        private Label attachedLabel;
-        private SxLibBase.SynAttachEvents attachEvent;
+        public SxLibWinForms instance;
+        public Label attachedLabel;
 
         public void SynapseLoadEvent(SxLibBase.SynLoadEvents Event, object e)
         {
@@ -61,7 +59,7 @@ namespace SkidWare.api
                     this.Unload();
                     break;
                 case SxLibBase.SynLoadEvents.READY:
-                    attachedLabel.Text = "Status: SkidWare is ready to use!";
+                    attachedLabel.Text = "Status: ready to use!";
                     break;
             }
         }
@@ -118,11 +116,9 @@ namespace SkidWare.api
                     attachedLabel.Text = "Status: Successfully attached";
                     break;
             }
-
-            attachEvent = Event;
         }
 
-        public void Initialize(Form form)
+        public Synapse(Form form)
         {
             // attach instance
             this.instance = SxLib.InitializeWinForms(form, Directory.GetCurrentDirectory());
@@ -137,21 +133,14 @@ namespace SkidWare.api
             attachedLabel = label;
         }
 
-        public bool ExecuteScript(string script)
-        {
-            instance.Execute(script);
-
-            if (attachEvent.Equals(SxLibBase.SynAttachEvents.NOT_INJECTED))
-            {
-                return false;
-            }
-
-            return true;
-        }
-
         public bool AttachToRoblox()
         {
             return instance.Attach();
+        }
+
+        public void ExecuteScript(string script)
+        {
+            instance.Execute(script);
         }
 
         public void Unload()

@@ -6,7 +6,7 @@ namespace SkidWare
 {
     public partial class SkidWareForm : Form
     {
-        Synapse synapse = new Synapse();
+        public Synapse synapse;
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -22,8 +22,17 @@ namespace SkidWare
 
         private void OnSkidWareFormLoad(object sender, EventArgs e)
         {
+            synapse = new Synapse(this);
             synapse.BroadcastEventToLabel(labelStatus);
-            synapse.Initialize(this);
+        }
+        
+        private void OnSkidWareFormMouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
 
         private void OnLoadButtonClicked(object sender, EventArgs e)
@@ -46,11 +55,7 @@ namespace SkidWare
 
         private void OnButtonExecuteClicked(object sender, EventArgs e)
         {
-            if (!synapse.ExecuteScript(richTextBoxScript.Text))
-            {
-                MessageBox.Show("Click inject before executing the script", "SkidWare - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            synapse.ExecuteScript(richTextBoxScript.Text);
         }
 
         private void OnButtonInjectClicked(object sender, EventArgs e)
@@ -75,15 +80,6 @@ namespace SkidWare
         private void OnButtonCopyleftClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("http://github.com/Aiuraa");
-        }
-
-        private void OnFormMouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
         }
     }
 }
