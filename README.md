@@ -1,5 +1,6 @@
 # SkidWare
 Synapse custom GUI made with SxLib.dll
+
 This custom GUI aims to be simpler but don't care about anything fancy.
 
 # Preview
