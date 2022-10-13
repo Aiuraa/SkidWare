@@ -1,4 +1,7 @@
-﻿namespace SkidWare
+﻿using System.Runtime.InteropServices;
+using System;
+
+namespace SkidWare
 {
     partial class SkidWareForm
     {
@@ -6,6 +9,29 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Make rounded edge, thanks to 
+        ///  https://stackoverflow.com/questions/18822067/rounded-corners-in-c-sharp-windows-forms
+        /// </summary>
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
+
+        /// <summary>
+        ///  Movable Form
+        /// </summary>
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool ReleaseCapture();
 
         /// <summary>
         /// Clean up any resources being used.
@@ -42,6 +68,7 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnAttach = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+
             this.SuspendLayout();
             // 
             // richTextBoxScript
@@ -175,6 +202,7 @@
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.richTextBoxScript);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SkidWareForm";
             this.Load += new System.EventHandler(this.OnSkidWareFormLoad);
