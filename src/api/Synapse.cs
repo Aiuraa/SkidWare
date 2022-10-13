@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using sxlib;
 using sxlib.Specialized;
-using SkidWare;
 
 namespace SkidWare.api
 {
@@ -15,7 +10,6 @@ namespace SkidWare.api
     {
         // Internal variable, no need to expose
         private SxLibWinForms instance;
-        private Form mainForm;
         private Label attachedLabel;
         private SxLibBase.SynAttachEvents attachEvent;
 
@@ -136,7 +130,6 @@ namespace SkidWare.api
             instance.AttachEvent += this.SynapseAttachEvent;
             
             instance.Load();
-            mainForm = form;
         }
 
         public void BroadcastEventToLabel(Label label)
