@@ -139,9 +139,9 @@
             this.labelStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.labelStatus.Location = new System.Drawing.Point(55, 128);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(97, 16);
+            this.labelStatus.Size = new System.Drawing.Size(107, 16);
             this.labelStatus.TabIndex = 8;
-            this.labelStatus.Text = "Status: Loaded";
+            this.labelStatus.Text = "Status: Initializing";
             // 
             // linkLabel1
             // 
