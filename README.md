@@ -8,6 +8,7 @@ This custom GUI aims to be simpler but don't care about anything fancy.
 
 ## Download
 It's in [Releases](https://github.com/Aiuraa/SkidWare/releases) dude, c'mon
+
 Make sure to grab latest SxLib.dll from `bin/sxlib` folder
 
 
