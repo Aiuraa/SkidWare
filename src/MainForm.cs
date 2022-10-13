@@ -70,7 +70,6 @@ namespace SkidWare
         private void OnButtonCloseClicked(object sender, EventArgs e)
         {
             synapse.Unload();
-            Application.Exit();
         }
 
         private void OnButtonCopyleftClicked(object sender, LinkLabelLinkClickedEventArgs e)

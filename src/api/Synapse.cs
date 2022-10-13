@@ -164,8 +164,7 @@ namespace SkidWare.api
         public void Unload()
         {
             instance.Close();
-            mainForm.Close();
-            Application.Exit();
+            Environment.Exit(Environment.ExitCode);
         }
     }
 }
